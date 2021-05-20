@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <title>Test</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <div class="tabs__top">
+                    <h2 class="tabs__title">
+                        Please select one font
+                    </h2>
+                    <div class="tabs__buttons">
+                        {% include('tab_button.html') %}
+                    </div>
+                </div>
+                <div class="tabs__bodies">
+                    {% for tab in tabs %}
+                        <div class="tabs__content js-tab-content {{ loop.index == 1 ? ' is-active ' : '' }}">
+                            {% if tab.type == 'cards' %}
+                                <div class="font-cards">
+                                    {% include('cards.html') %}
+                                </div>
+                            {% else %}
+                                <div class="text-block">
+                                    {{ tab.content }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    <footer>
+        <script src="../scripts/scripts.js"></script>
+    </footer>
+    </body>
+</html>

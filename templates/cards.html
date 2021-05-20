@@ -1,0 +1,10 @@
+{% for card in tab.content %}
+  <label class="font-cards-item  {{ loop.index == 1 ? ' font-cards-item--non-format' : '' }}">
+    <input type="radio" name="font">
+    <i class="{{ card.color }}">
+      <span class="font-cards-item__symbol">{{ card.symbol }}</span>
+    </i>
+    <span class="font-cards-item__text">{{ card.text }}</span>
+  </label>
+{% endfor %}
+

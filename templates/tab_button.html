@@ -1,0 +1,3 @@
+{% for button in buttons %}
+  <button class="button js-tab-btn {{ loop.index == 1 ? ' is-active' : '' }}">{{ button.text }}</button>
+{% endfor %}
